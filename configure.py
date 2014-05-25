@@ -9,7 +9,8 @@ config["importer"] = "osm2pgsql" # either 'imposm' or 'osm2pgsql'
 # The name given to the style. This is the name it will have in the TileMill
 # project list, and a sanitized version will be used as the directory name
 # in which the project is stored
-config["name"] = "San Diego [Bright]"
+# config["name"] = "San Diego [Bright]"
+config["name"] = "Baltimore [Bright]"
 
 # The absolute path to your MapBox projects directory. You should 
 # not need to change this unless you have configured TileMill specially
@@ -19,7 +20,7 @@ config["path"] = path.expanduser("~/Documents/MapBox/project")
 # Leave empty for Mapnik defaults. The only required parameter is dbname.
 config["postgis"]["host"]     = ""
 config["postgis"]["port"]     = ""
-config["postgis"]["dbname"]   = "osm"
+config["postgis"]["dbname"]   = "baltimore"
 config["postgis"]["user"]     = ""
 config["postgis"]["password"] = ""
 
@@ -32,7 +33,22 @@ config["postgis"]["password"] = ""
 # World
 # config["postgis"]["extent"] = "-20037508.34,-20037508.34,20037508.34,20037508.34"
 # San Diego
-config["postgis"]["extent"] = "-117.4773385039 32.5719017933 -116.3670803398 33.2681644656"
+# config['bounds'] = "-117.4773385039 32.5719017933 -116.3670803398 33.2681644656"
+# config["postgis"]["extent"] = "-117.4773385039 32.5719017933 -116.3670803398 33.2681644656"
+config['minzoom'] = 0
+config['maxzoom'] = 16
+# config['bounds'] = [-117.4773385039, 32.5719017933, -116.3670803398, 33.2681644656]
+# config['center'] = [-116.92220942185, 32.920033129450005]
+# config["postgis"]["extent"] = "-20037508.34,-20037508.34,20037508.34,20037508.34"
+
+# baltimore
+config['bounds'] = [-76.71192455920391, 39.18833888607322, -76.52859020861797, 39.37356590965929]
+config['center'] = [-76.61613751086406, 39.289118496474586]
+config["postgis"]["extent"] = "-20037508.34,-20037508.34,20037508.34,20037508.34"
+
+# 39.37356590965929, -76.71192455920391
+# 39.18833888607322, -76.52859020861797
+# 39.289118496474586, -76.61613751086406
 
 # Land shapefiles required for the style. If you have already downloaded
 # these or wish to use different versions, specify their paths here.
